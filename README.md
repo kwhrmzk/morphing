@@ -36,7 +36,7 @@ CNN-VAEの概念図は下のように表しています。
 
 # 使用データ
 
-本研究では, 音楽ループ素材を Wave 形式で多数収録されたデータセットとして,『Sound PooL vol. 2』を使用します。このデータセットから、ジャンルが「Techno & Trans」で楽器パートが「Drums」のものから3秒間のもの74個を抽出する。
+本研究では, 音楽ループ素材を Wave 形式で多数収録されたデータセットとして,『Sound PooL vol. 2』を使用します。このデータセットから、ジャンルが「Techno & Trans」で楽器パートが「Drums」のものから3秒間のものを抽出する。
 この音源は有料であるため、使用する場合は各自で購入してください。
 
 https://www.ah-soft.com/soundpool/
@@ -47,8 +47,7 @@ https://www.ah-soft.com/soundpool/
 
 まず、はじめに使用データをダウンロードします。Googleドライブを開き、「マイドライブ」直下に「Drums」というフォルダを作り、「マイドライブ」フォルダの中に、データセットの示したWAVEデータをすべてアップロードしましょう。
 
-新しいGoogle Colaboratoryノートブックを開きましょう。開いたら、以下のコードでGoogle
-ドライブをマウントします。
+新しいGoogle Colaboratoryノートブックを開きましょう。開いたら、以下のコードでGoogleドライブをマウントします。
 
 ```py
 from google.colab import drive
