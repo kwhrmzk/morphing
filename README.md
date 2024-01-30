@@ -36,22 +36,19 @@ CNN-VAEの概念図は下のように表しています。
 
 # 使用データ
 
-本研究では, 音楽ループ素材を Wave 形式で多数収録されたデータセットとして,『Sound PooL vol. 2』を使用します。このデータセットから、ジャンルが「Techno & Trans」で楽器パートが「Drums」のものから3秒間のものを抽出する。
+本研究では, 音楽ループ素材を Wave 形式で多数収録されたデータセットとして,『Sound PooL vol. 2』を使用します。このデータセットから、ジャンルが「Techno & Trans」で楽器パートが「Drums」のものから3秒間のもの74個を抽出する。
 この音源は有料であるため、使用する場合は各自で購入してください。
 
 https://www.ah-soft.com/soundpool/
 
-北原研究室に所属している場合は、sclab@kthrlab.jpのGoogleアカウントより以下のパス上にデータセットが69個存在します。以降のパスはこれを使用する。
-
-```py
-"/content/drive/MyDrive/B4川原/wav/Sound Pool/Vol.2/TechnoTrance Vol.9/Drums"
-```
 # 実際にモーフィングを行おう
 ## モデルの構築と学習
 1. Google Colaboratoryを開いて準備をする
 
+まず、はじめに使用データをダウンロードします。Googleドライブを開き、「マイドライブ」直下に「Drums」というフォルダを作り、「マイドライブ」フォルダの中に、データセットの示したWAVEデータをすべてアップロードしましょう。
 
-新しいGoogle Colaboratoryノートブックを開きましょう。開いたら、以下のコードでGoogleドライブをマウントします。
+新しいGoogle Colaboratoryノートブックを開きましょう。開いたら、以下のコードでGoogle
+ドライブをマウントします。
 
 ```py
 from google.colab import drive
@@ -112,7 +109,9 @@ def load_spectrograms(dirs, winsize=2048, hopsize=None):
 続いて、複数のディレクトリに保存されている音声データを読み込みます。
 
 ```py
-    dirs =["/content/drive/MyDrive/B4川原/wav/Sound Pool/Vol.2/TechnoTrance Vol.9/Drums"]
+dirs = [
+"/content/drive/MyDrive/Drums"
+]
 
 x_train, sr_all, original_S = load_spectrograms(dirs)
   ```
