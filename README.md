@@ -41,11 +41,15 @@ CNN-VAEの概念図は下のように表しています。
 
 https://www.ah-soft.com/soundpool/
 
+北原研究室に所属している場合は、sclab@kthrlab.jpのGoogleアカウントより以下のパス上にデータセットが69個存在します。以降のパスはこれを使用する。
+
+```py
+"/content/drive/MyDrive/B4川原/wav/Sound Pool/Vol.2/TechnoTrance Vol.9/Drums"
+```
 # 実際にモーフィングを行おう
 ## モデルの構築と学習
 1. Google Colaboratoryを開いて準備をする
 
-まず、はじめに使用データをダウンロードします。Googleドライブを開き、「マイドライブ」直下に「Drums」というフォルダを作り、「マイドライブ」フォルダの中に、データセットの示したWAVEデータをすべてアップロードしましょう。
 
 新しいGoogle Colaboratoryノートブックを開きましょう。開いたら、以下のコードでGoogleドライブをマウントします。
 
@@ -108,9 +112,7 @@ def load_spectrograms(dirs, winsize=2048, hopsize=None):
 続いて、複数のディレクトリに保存されている音声データを読み込みます。
 
 ```py
-dirs = [
-"/content/drive/MyDrive/Drums"
-]
+    dirs =["/content/drive/MyDrive/B4川原/wav/Sound Pool/Vol.2/TechnoTrance Vol.9/Drums"]
 
 x_train, sr_all, original_S = load_spectrograms(dirs)
   ```
